@@ -54,7 +54,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #                  count = 0                This should be outside and above the range function
 #                  if math.cos(r) > 0:      r is not changing.  This should be math.cos(k + r)
 #                      count = 1            count will only ever = 1.  It should be count = count + 1
-#                  return count             This should be outside of the range function at the end of the sequence
+#                  return count             This should be outside of the range function at the end of the sequence.
 #
 #     f. The code in the "graphics accumulation" example below includes:
 #            for _ in range(n):
