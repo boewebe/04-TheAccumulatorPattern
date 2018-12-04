@@ -9,10 +9,12 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Brendan Boewe.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+
+import math
 
 
 # -----------------------------------------------------------------------------
@@ -109,7 +111,14 @@ def draw_parallel_lines(n, point, length, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+    for _ in range(n):
+        x_value = math.sqrt((length**2)-((point.y - y_value)**2) + point.x
+        y_value = math.sqrt((length**2)-((point.x - x_value)**2) + point.y
+        line = rg.Line(point., rg.Point(x_value, y_value))
 
+        line.attach_to(window)
+
+    window.render()
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
