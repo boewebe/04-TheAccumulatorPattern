@@ -98,7 +98,7 @@ def draw_parallel_lines(n, point, length, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -111,14 +111,17 @@ def draw_parallel_lines(n, point, length, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
-    for _ in range(n):
-        x_value = math.sqrt((length**2)-((point.y - y_value)**2) + point.x
-        y_value = math.sqrt((length**2)-((point.x - x_value)**2) + point.y
-        line = rg.Line(point., rg.Point(x_value, y_value))
-
+    line_1 = rg.Line(point, rg.Point(point.x + length, point.y))
+    line_1.attach_to(window)
+    for k in range(n):
+        x_value = point.x + length
+        y_value = point.y + (30 * k)
+        x = point.x
+        y = point.y + (30 * k)
+        line = rg.Line(rg.Point(x,y), rg.Point(x_value, y_value))
         line.attach_to(window)
-
     window.render()
+
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
@@ -170,7 +173,7 @@ def draw_lines(n, point, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -183,6 +186,13 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+
+    for k in range(n):
+        x = point.x + 100
+        y = (200/(n-1))*k + (point.y - 100)
+        line = rg.Line(point, rg.Point(x, y))
+        line.attach_to(window)
+    window.render()
 
 
 # -----------------------------------------------------------------------------
